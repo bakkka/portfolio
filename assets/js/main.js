@@ -4,22 +4,6 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const $ = (selector, root = document) => root.querySelector(selector);
 
-  const timeFormat = new Intl.DateTimeFormat('ru-RU', {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-    timeZone: 'UTC',
-  });
-
-  function tickClock() {
-    const value = timeFormat.format(new Date());
-    $$('[data-clock]').forEach((node) => {
-      node.textContent = value;
-    });
-  }
-
-  tickClock();
-  window.setInterval(tickClock, 20000);
   $$('[data-year]').forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
@@ -85,37 +69,32 @@
         {
           src: 'assets/img/testa-home.webp',
           alt: 'Главная страница Testa: крупный заголовок, фактуры плитки и кирпича',
-          caption: 'Главная',
           title: 'Первый экран',
-          text: 'Крупная типографика, фактуры материала и понятный путь к каталогу. Тон бренда — тёплый и ремесленный, без стоковых клише.',
+          text: 'Крупная типографика, фактуры материала и путь к каталогу. Тон бренда тёплый и ремесленный.',
         },
         {
           src: 'assets/img/testa-catalog.webp',
           alt: 'Каталог Testa с фильтрами по категориям и карточками серий',
-          caption: 'Каталог',
-          title: '11 серий, фильтры и цены',
-          text: 'Плитка, кирпич и декор с форматами и ценой «от». Карточки листаются как образцы материала, а не как товары в корзине.',
+          title: 'Каталог: 11 серий',
+          text: 'Плитка, кирпич и декор с форматами и ценой «от». Карточки листаются как образцы материала.',
         },
         {
           src: 'assets/img/testa-product.webp',
           alt: 'Карточка товара Testa с форматами, ценами и оттенками глазури',
-          caption: 'Карточка',
-          title: 'Материал в деталях',
-          text: 'Таблица размеров и цен, палитра глазурей, характеристики и запрос образца или прайса в один клик.',
+          title: 'Размеры, цены и глазури',
+          text: 'Таблица размеров и цен, палитра глазурей, характеристики и запрос образца или прайса.',
         },
         {
           src: 'assets/img/testa-admin.webp',
           alt: 'Админ-панель Testa со статистикой заявок и последними обращениями',
-          caption: 'Админка',
-          title: 'Управление без разработчика',
-          text: 'Товары, SEO-поля, заявки и тексты сайта. Загрузка фото, статусы обращений и внутренние заметки — всё в одном месте.',
+          title: 'Товары, заявки и SEO',
+          text: 'Товары, SEO-поля, заявки и тексты сайта. Загрузка фото, статусы обращений и внутренние заметки.',
         },
         {
           src: 'assets/img/testa-mobile.webp',
           alt: 'Мобильная версия сайта Testa с крупным заголовком и кнопками',
-          caption: 'Мобильная',
-          title: 'Один материал — любой экран',
-          text: 'Адаптив до 360 px: каталог, формы и админка остаются удобными, а типографика не теряет характер.',
+          title: 'Мобильная версия',
+          text: 'Адаптив до 360 px: каталог, формы и админка остаются удобными.',
         },
       ],
     },
@@ -126,37 +105,32 @@
         {
           src: 'assets/img/flowdesk-landing.webp',
           alt: 'Лендинг Flowdesk с тёмным фоном, телефоном и описанием Telegram-бота',
-          caption: 'Лендинг',
-          title: 'Продукт с человеческим лицом',
-          text: 'Лендинг объясняет ценность за десять секунд: подписки, платежи и рассылки в Telegram — под полным контролем.',
+          title: 'Лендинг',
+          text: 'Лендинг показывает бота: подписки, платежи и рассылки в Telegram.',
         },
         {
           src: 'assets/img/flowdesk-dashboard.webp',
           alt: 'Дашборд Flowdesk с метриками, графиками выручки и тарифами',
-          caption: 'Дашборд',
-          title: 'Метрики, которые читаются',
-          text: 'Выручка, MRR, конверсия и удержание на одном экране. Графики не спорят с цифрами, а помогают принимать решения.',
+          title: 'Дашборд',
+          text: 'Выручка, MRR, конверсия и удержание на одном экране.',
         },
         {
           src: 'assets/img/flowdesk-users.webp',
           alt: 'Раздел пользователей Flowdesk с таблицей и фильтрами',
-          caption: 'Пользователи',
-          title: 'База и подписки',
-          text: 'Поиск, фильтры, тарифы и история платежей. Администратор видит картину по каждому пользователю без переключения вкладок.',
+          title: 'Пользователи',
+          text: 'Поиск, фильтры, тарифы и история платежей по каждому пользователю.',
         },
         {
           src: 'assets/img/flowdesk-plans.webp',
           alt: 'Раздел тарифов Flowdesk с карточками планов',
-          caption: 'Тарифы',
-          title: 'Тарифы и платежи',
-          text: 'Free, Pro и Business с ценами в Stars. Тарифы редактируются без деплоя — продукт меняется вместе с бизнесом.',
+          title: 'Тарифы',
+          text: 'Free, Pro и Business с ценами в Stars. Тарифы редактируются без деплоя.',
         },
         {
           src: 'assets/img/flowdesk-login.webp',
           alt: 'Страница входа в админку Flowdesk',
-          caption: 'Вход',
-          title: 'Доступ и роли',
-          text: 'Отдельный вход для администраторов, безопасные сессии и двуязычный интерфейс. Всё, что нужно для ежедневной работы.',
+          title: 'Вход',
+          text: 'Отдельный вход для администраторов, сессии и двуязычный интерфейс.',
         },
       ],
     },
@@ -167,36 +141,31 @@
         {
           src: 'assets/img/pulse-overview.webp',
           alt: 'Overview в Pulse: MRR, активные клиенты, churn, NRR, выручка и план-микс',
-          caption: 'Overview',
-          title: 'Вся картина за один экран',
+          title: 'Обзор',
           text: 'MRR, активные клиенты, churn и NRR. Метрики считаются из счетов и событий, а не вбиваются руками.',
         },
         {
           src: 'assets/img/pulse-revenue.webp',
           alt: 'Раздел Revenue в Pulse с историей MRR и разложением движения выручки',
-          caption: 'Revenue',
-          title: 'Выручка, которая сходится',
-          text: 'New, expansion, contraction и churn складываются в честный MRR. Каждый бар можно разложить до конкретных клиентов.',
+          title: 'Выручка',
+          text: 'New, expansion, contraction и churn складываются в MRR. Каждый бар можно разложить до конкретных клиентов.',
         },
         {
           src: 'assets/img/pulse-retention.webp',
           alt: 'Когортная таблица Retention в Pulse с heatmap удержания по месяцам',
-          caption: 'Retention',
-          title: 'Когорты, а не средние',
-          text: '12 месячных когорт в heatmap и взвешенная кривая удержания. Видно, какие месяцы действительно удерживают пользователей.',
+          title: 'Удержание',
+          text: '12 месячных когорт в heatmap и взвешенная кривая удержания. Видно, какие месяцы удерживают пользователей.',
         },
         {
           src: 'assets/img/pulse-funnel.webp',
           alt: 'Воронка активации Pulse с конверсией по шагам и источниками',
-          caption: 'Funnel',
           title: 'Воронка активации',
           text: 'Signup → activated → project → team → paid: конверсия шагов, drop-off и среднее время до оплаты.',
         },
         {
           src: 'assets/img/pulse-landing.webp',
           alt: 'Светлый лендинг Pulse с превью аналитического дашборда',
-          caption: 'Landing',
-          title: 'Кейс с живым демо',
+          title: 'Лендинг',
           text: 'Лендинг объясняет продукт и пускает в демо под тремя ролями: owner, admin и viewer.',
         },
       ],
@@ -206,7 +175,6 @@
   const dialog = $('#demo-dialog');
   const demoTitle = $('[data-demo-title]');
   const demoImage = $('[data-demo-image]');
-  const demoCaption = $('[data-demo-caption]');
   const demoSlideTitle = $('[data-demo-slide-title]');
   const demoSlideText = $('[data-demo-slide-text]');
   const demoCounter = $('[data-demo-counter]');
@@ -230,7 +198,6 @@
 
     demoImage.src = slide.src;
     demoImage.alt = slide.alt;
-    demoCaption.textContent = slide.caption;
     demoSlideTitle.textContent = slide.title;
     demoSlideText.textContent = slide.text;
     demoCounter.textContent = `${pad(demoState.index + 1)} / ${pad(total)}`;
@@ -250,7 +217,7 @@
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'demo-thumb';
-      button.setAttribute('aria-label', `${slide.caption}: ${slide.title}`);
+      button.setAttribute('aria-label', slide.title);
       const image = document.createElement('img');
       image.src = slide.src;
       image.alt = '';
