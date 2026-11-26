@@ -347,23 +347,4 @@
       }, 2400);
     });
   });
-
-  const tiltCard = $('[data-tilt]');
-  if (tiltCard && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    tiltCard.addEventListener('pointermove', (event) => {
-      if (reduced.matches) return;
-      const rect = tiltCard.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      tiltCard.style.transition = 'transform .12s linear';
-      tiltCard.style.transform = `rotate(${-1.2 + x * 1.2}deg) rotateX(${-y * 2}deg) rotateY(${x * 2.4}deg)`;
-    });
-
-    tiltCard.addEventListener('pointerleave', () => {
-      tiltCard.style.transition = '';
-      tiltCard.style.transform = '';
-    });
-  }
 })();
